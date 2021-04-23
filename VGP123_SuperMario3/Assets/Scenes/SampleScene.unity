@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 176627273}
   - component: {fileID: 176627275}
   - component: {fileID: 176627274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245818015}
   - component: {fileID: 245818016}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: QuestionHit1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 245818014}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -320,7 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 257087162}
   - component: {fileID: 257087163}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CloudTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 257087161}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -377,7 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 395479510}
   - component: {fileID: 395479511}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: QuestionHit7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 395479509}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 446119607}
   - component: {fileID: 446119609}
   - component: {fileID: 446119608}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +577,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &502624744
 GameObject:
@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 502624745}
   - component: {fileID: 502624747}
   - component: {fileID: 502624746}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 539097860}
   - component: {fileID: 539097862}
   - component: {fileID: 539097861}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 598242557}
   - component: {fileID: 598242558}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 613803939}
   - component: {fileID: 613803940}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SolidPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -905,7 +905,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 613803938}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -932,7 +932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 667898867}
   - component: {fileID: 667898868}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: QuestionHit3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -962,7 +962,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 667898866}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -989,7 +989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771768548}
   - component: {fileID: 771768549}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1019,7 +1019,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 771768547}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1046,7 +1046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 795865752}
   - component: {fileID: 795865753}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1112,7 +1112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 935274831}
   - component: {fileID: 935274832}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: QuestionHit2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1142,7 +1142,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 935274830}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1159,6 +1159,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5477927, y: 0.5552876}
   m_EdgeRadius: 0
+--- !u!1 &975185008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975185009}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &975185009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975185008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1053340659}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1053340656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,8 +1201,10 @@ GameObject:
   - component: {fileID: 1053340658}
   - component: {fileID: 1053340657}
   - component: {fileID: 1053340660}
+  - component: {fileID: 1053340662}
+  - component: {fileID: 1053340661}
   m_Layer: 0
-  m_Name: aMarioIdle
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1243,7 +1275,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1182713179049571900, guid: 9578d594273c1634c8c7689209fa48fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1263,11 +1295,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053340656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5857472, y: -3.1643662, z: 0}
+  m_LocalPosition: {x: -6.5857472, y: -3.1643662, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 975185009}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1053340660
 Rigidbody2D:
@@ -1289,7 +1322,46 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1053340661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053340656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825f2e69db0536242b1ff43f31f3f081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 345
+  speed: 5
+  isGrounded: 0
+  isGroundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  groundCheck: {fileID: 975185009}
+  groundCheckRadius: 0
+--- !u!95 &1053340662
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053340656}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 838c378893d11b049981600880e34562, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1104159339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,7 +1373,7 @@ GameObject:
   - component: {fileID: 1104159340}
   - component: {fileID: 1104159342}
   - component: {fileID: 1104159341}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1446,7 @@ GameObject:
   - component: {fileID: 1119982519}
   - component: {fileID: 1119982521}
   - component: {fileID: 1119982520}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CloudPlatform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1446,7 +1518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1167235369}
   - component: {fileID: 1167235370}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: QuestionHit8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1476,7 +1548,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1167235368}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1503,7 +1575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1335842159}
   - component: {fileID: 1335842160}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: QuestionHit6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1533,7 +1605,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1335842158}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1560,7 +1632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1354347221}
   - component: {fileID: 1354347222}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: QuestionHit5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1590,7 +1662,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1354347220}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1618,7 +1690,7 @@ GameObject:
   - component: {fileID: 1355544622}
   - component: {fileID: 1355544624}
   - component: {fileID: 1355544623}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1691,7 +1763,7 @@ GameObject:
   - component: {fileID: 1388539680}
   - component: {fileID: 1388539682}
   - component: {fileID: 1388539681}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1764,7 +1836,7 @@ GameObject:
   - component: {fileID: 1486100076}
   - component: {fileID: 1486100078}
   - component: {fileID: 1486100077}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1836,7 +1908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1531972601}
   - component: {fileID: 1531972602}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: QuestionHit4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1866,7 +1938,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1531972600}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1893,7 +1965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1711947608}
   - component: {fileID: 1711947609}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: QuestionHit9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1923,7 +1995,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1711947607}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1951,7 +2023,7 @@ GameObject:
   - component: {fileID: 1717243585}
   - component: {fileID: 1717243587}
   - component: {fileID: 1717243586}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2080,7 +2152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1852241978}
   - component: {fileID: 1852241979}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2137,7 +2209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2002538915}
   - component: {fileID: 2002538916}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2254,7 +2326,7 @@ GameObject:
   - component: {fileID: 2134775823}
   - component: {fileID: 2134775825}
   - component: {fileID: 2134775824}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CloudPlatform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
