@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask isGroundLayer;
     public Transform groundCheck;
     public float groundCheckRadius;
+    public bool isShooting;
     
     // Start is called before the first frame update
     void Start()
@@ -84,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            anim.SetTrigger("Fireball");
+            anim.SetBool("isShooting", true);
         }
     }
 }

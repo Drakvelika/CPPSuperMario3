@@ -253,13 +253,13 @@ TextureImporter:
     second: mario_82
   - first:
       213: -9082935871930378589
-    second: mario_83
+    second: 1MarioShoot1
   - first:
       213: 9135329934253929642
-    second: mario_84
+    second: 1MarioShoot2
   - first:
       213: -2524716969853798764
-    second: mario_85
+    second: 1MarioShoot3
   - first:
       213: 7055924261345658350
     second: mario_86
@@ -2914,7 +2914,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mario_83
+      name: 1MarioShoot1
       rect:
         serializedVersion: 2
         x: 331
@@ -2935,10 +2935,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mario_84
+      name: 1MarioShoot2
       rect:
         serializedVersion: 2
-        x: 356
+        x: 355
         y: 1157
         width: 15
         height: 27
@@ -2956,7 +2956,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mario_85
+      name: 1MarioShoot3
       rect:
         serializedVersion: 2
         x: 381
