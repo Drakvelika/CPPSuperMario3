@@ -16,7 +16,12 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius;
     public bool isShooting;
-    
+
+    public int score = 0;
+    public int lives = 3;
+
+    bool coroutineRunning = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (jumpForce <= 0)
         {
-            jumpForce = 300;
+            jumpForce = 345;
         }
 
         if (groundCheckRadius <= 0)
@@ -87,5 +92,27 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("isShooting", true);
         }
+    }
+
+    public void StartJChange()
+    {
+        if (!coroutineRunning)
+        {
+            StartCoroutine(JumpFChange());
+        }
+        else
+        {
+            StopCoroutine(JumpFChange());
+            StartCoroutine(JumpFChange());
+        }
+    }
+
+    IEnumerator JumpFChange()
+    {
+        coroutineRunning = true;
+        jumpForce = 600;
+        yield return new WaitForSeconds(10.0f);
+        jumpForce = 345;
+        coroutineRunning = false;
     }
 }
