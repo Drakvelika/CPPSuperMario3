@@ -43,6 +43,8 @@ public class Collectibles : MonoBehaviour
                     pmScript = col.gameObject.GetComponent<PlayerMovement>();
                     pmScript.lives++;
                     Debug.Log(pmScript.lives);
+                    pmScript.score++;
+                    Debug.Log(pmScript.score);
                     break;
                 case CollectibleType.POWERUP:
                     col.gameObject.GetComponent<PlayerMovement>().StartJChange();
