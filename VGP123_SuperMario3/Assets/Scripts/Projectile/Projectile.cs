@@ -35,10 +35,12 @@ public class Projectile : MonoBehaviour
     {
         if (col.gameObject.tag == "coin" || col.gameObject.tag == "Player")
         {
-            //Do nothing for now.
+            Destroy(gameObject);
         }
-        else
+        
+        if (col.gameObject.tag == "Enemy")
         {
+            //col.gameObject.GetComponent<EnemyTurret>();
             Destroy(gameObject);
         }
     }

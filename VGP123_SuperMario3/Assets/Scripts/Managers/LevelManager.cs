@@ -7,18 +7,11 @@ public class LevelManager : MonoBehaviour
     public int startinglives;
     public Transform spawnLocation;
 
-
     // Start is called before the first frame update
     void Start()
     {
         GameManager.instance.lives = startinglives;
         GameManager.instance.SpawnPlayer(spawnLocation);
         GameManager.instance.currentLevel = GetComponent<LevelManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

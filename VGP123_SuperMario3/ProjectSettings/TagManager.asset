@@ -9,6 +9,7 @@ TagManager:
   - Fireball
   - Objective
   - Turret
+  - Projectile
   layers:
   - Default
   - TransparentFX

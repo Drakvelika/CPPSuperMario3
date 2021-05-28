@@ -2,106 +2,125 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 public class EnemyTurret : MonoBehaviour
 {
+    public Transform player;
     public Transform projectileSpawnPoint;
     public Projectile projectilePrefab;
-    public Transform Player;
-    public SpriteRenderer EnemyProjectile;
-
-    Animator anim;
-
     public float projectileForce;
-    public float agroRange;
+    GameObject projectile;
+
+    public bool isFacingRight;
+
     public float projectileFireRate;
+    public float turretFireRange;
+    float timeSinceLastShot = 0.0f;
+
     public int health;
 
-    //animator an;
-   // spriteRenderer sr;
-
-
-    float timeSinceLastFire = 2.0f;
+    SpriteRenderer sr;
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
 
-        if (projectileForce <= 0)
+        if (!projectileSpawnPoint)
+        {
+            Debug.Log("No projectileSpawnPoint found.");
+        }
+        if (!projectilePrefab)
+        {
+            Debug.Log("No projectilePrefab found.");
+        }
+        if (projectileForce == 0)
         {
             projectileForce = 3.0f;
+            Debug.Log("projectileForce was not set. Defaulting to " + projectileForce);
         }
 
-        if (projectileFireRate <= 0)
+        if (projectileFireRate == 0)
         {
             projectileFireRate = 2.0f;
+            Debug.Log("projectileFireRate was not set. Defaulting to " + projectileFireRate);
         }
 
-        if (health <= 0)
+        if (health == 0)
         {
-            health = 6;
-        }
-
-        if (agroRange <= 0)
-        {
-            agroRange = 4.0f;
+            health = 5;
+            Debug.Log("health was not set. Deafulting to " + health);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Player)
+      //  if (player)
+      /*  {
+            if (player.transform.position.x < transform.position.x)
+            {
+                sr.flipX = true;
+            }
+            else
+            {
+                sr.flipX = false;
+            }
+        }*/
+        if (transform.position.x < player.position.x && !isFacingRight)
         {
-
+            flip();
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+        else if (transform.position.x > player.position.x && isFacingRight)
         {
-            anim.SetBool("isActive", true);
+            flip();
+        }
+
+        if (Time.time >= timeSinceLastShot + projectileFireRate)
+        {
+            fire();
+            timeSinceLastShot = Time.time;
         }
     }
 
     public void fire()
     {
-       /* if (sr.flipX)
-        {
-            
-        }*/
-        if (transform.position.x < Player.position.x)
+        if (transform.position.x < player.position.x)
         {
             Projectile temp = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
             temp.speed = projectileForce;
-            //EnemyProjectile.flipX = true;
         }
 
-        if (transform.position.x > Player.position.x)
+        if (transform.position.x > player.position.x)
         {
             Projectile temp = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
             temp.speed = -projectileForce;
-            //EnemyProjectile.flipX = false;
         }
     }
 
-    public void ReturnToIdle()
+private void OnCollisionEnter2D(Collision2D collision)
     {
-        anim.SetBool("isActive", false);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "PlayerProjectile")
+        if (collision.gameObject.tag == "Fireball")
         {
             health--;
-            Destroy(collision.gameObject);
             if (health <= 0)
             {
-                Destroy(gameObject.transform.parent.gameObject);
+                Destroy(gameObject);
             }
         }
+    }
+
+    void flip()
+    {
+        if (isFacingRight)
+        {
+            isFacingRight = false;
+        }
+        if (!isFacingRight)
+        {
+            isFacingRight = true;
+        }
+        Vector3 scaleFactor = transform.localScale;
+        scaleFactor.x *= -1;
+        transform.localScale = scaleFactor;
     }
 }

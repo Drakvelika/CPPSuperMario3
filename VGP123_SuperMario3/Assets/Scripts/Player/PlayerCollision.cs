@@ -6,13 +6,11 @@ public class PlayerCollision : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D Col)
     {
-        if (Col.gameObject.tag == "EnemyProjectile")
+        if (Col.gameObject.tag == "Projectile")
         {
             GameManager.instance.lives--;
             Destroy(Col.gameObject);
         }
-
-
     }
     // Start is called before the first frame update
     void Start()
