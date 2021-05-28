@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
         if (mainCamera)
         {
             mainCamera.player = Instantiate(playerPrefab, spawnLocation.position, spawnLocation.rotation);
+            playerinstance = mainCamera.player;
         }
         else
         {
