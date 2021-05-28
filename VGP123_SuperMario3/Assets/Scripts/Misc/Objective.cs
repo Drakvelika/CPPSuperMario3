@@ -21,7 +21,7 @@ public class Objective : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Objective Met");
-
+            
             //End game logic goes here.
         }
     }

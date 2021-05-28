@@ -8,6 +8,7 @@ TagManager:
   - Walls
   - Fireball
   - Objective
+  - Turret
   layers:
   - Default
   - TransparentFX

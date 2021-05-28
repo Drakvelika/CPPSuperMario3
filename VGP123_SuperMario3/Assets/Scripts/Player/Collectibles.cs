@@ -35,14 +35,17 @@ public class Collectibles : MonoBehaviour
             switch (currentCollectible)
             {
                 case CollectibleType.COLLECTIBLE:
-                    PlayerMovement pmScript = col.gameObject.GetComponent<PlayerMovement>();
-                    pmScript.score++;
-                    Debug.Log(pmScript.score);
+                    GameManager.instance.score++;
                     break;
                 case CollectibleType.LIVES:
+<<<<<<< Updated upstream
                     pmScript = col.gameObject.GetComponent<PlayerMovement>();
                     pmScript.lives++;
                     Debug.Log(pmScript.lives);
+=======
+                    GameManager.instance.lives++;
+                    GameManager.instance.score++;
+>>>>>>> Stashed changes
                     break;
                 case CollectibleType.POWERUP:
                     col.gameObject.GetComponent<PlayerMovement>().StartJChange();
