@@ -802,7 +802,6 @@ GameObject:
   - component: {fileID: 500615216}
   - component: {fileID: 500615215}
   - component: {fileID: 500615217}
-  - component: {fileID: 500615218}
   m_Layer: 0
   m_Name: Mario Bros 3 1-1 1
   m_TagString: Untagged
@@ -884,29 +883,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 500615214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51d651ed91e4ad8409714823734dcfcb, type: 3}
+  m_Script: {fileID: 11500000, guid: 28315000939c9044aac3bd9b040dfce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLives: 3
-  playerinstance: {fileID: 0}
-  playerPrefab: {fileID: 0}
-  currentLevel: {fileID: 0}
---- !u!114 &500615218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500615214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51d651ed91e4ad8409714823734dcfcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLives: 3
-  playerinstance: {fileID: 0}
-  playerPrefab: {fileID: 0}
-  currentLevel: {fileID: 0}
+  startinglives: 3
+  spawnLocation: {fileID: 750364915}
 --- !u!1 &502624744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,7 +1535,7 @@ GameObject:
   - component: {fileID: 750364914}
   m_Layer: 0
   m_Name: PlayerSpawn
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3532,7 +3513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5323055576208576088, guid: e4a815c375d19014cac14acdf4db52d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.048122
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5323055576208576088, guid: e4a815c375d19014cac14acdf4db52d4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3566,9 +3547,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7108971192240002264, guid: e4a815c375d19014cac14acdf4db52d4, type: 3}
-      propertyPath: playerPrefab
-      value: 
-      objectReference: {fileID: 7654857400348129936, guid: 3f7af3f4a17ecbc49ab1b763572973ad, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4a815c375d19014cac14acdf4db52d4, type: 3}

@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLives: 3
+  playerinstance: {fileID: 0}
   playerPrefab: {fileID: 7654857400348129936, guid: 3f7af3f4a17ecbc49ab1b763572973ad, type: 3}
-  spawnLocation: {fileID: 0}
   currentLevel: {fileID: 0}
