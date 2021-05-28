@@ -2,13 +2,135 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class EnemyTurret : MonoBehaviour
+{
+    public Transform projectileSpawnPoint;
+    public Projectile projectilePrefab;
+    public Transform Player;
+    public SpriteRenderer EnemyProjectile;
+    float timeSinceLastShot = 2.0f;
+    public bool isFacingRight;
+    Animator anim;
+    SpriteRenderer Proj;
+
+    public float projectileForce = 3.0f;
+    public float agroRange;
+    public float projectileFireRate;
+    public int health;
+
+    float timeSinceLastFire = 2.0f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Proj = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+
+        if (projectileForce <= 0)
+        {
+            projectileForce = 3.0f;
+        }
+
+        if (projectileFireRate <= 0)
+        {
+            projectileFireRate = 2.0f;
+        }
+
+        if (health <= 0)
+        {
+            health = 6;
+        }
+
+        if (agroRange <= 0)
+        {
+            agroRange = 4.0f;
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (transform.position.x < Player.position.x && !isFacingRight)
+        {
+            flip();
+            Proj.flipX = true;
+        }
+        else if (transform.position.x > Player.position.x && isFacingRight)
+        {
+            flip();
+            Proj.flipX = false;
+        }
+        if (Time.time >= timeSinceLastShot + projectileFireRate)
+        {
+            fire();
+            timeSinceLastShot = Time.time;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            anim.SetBool("isActive", true);
+        }
+    }
+
+    public void fire()
+    {
+        if (Proj.flipX)
+        {
+                Projectile temp = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+                temp.speed = projectileForce;
+                EnemyProjectile.flipX = false;
+        }
+        else
+        {
+                Projectile temp = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+                temp.speed = -projectileForce;
+                EnemyProjectile.flipX = true;
+        }
+    }
+
+    public void ReturnToIdle()
+    {
+        anim.SetBool("isActive", false);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Fireball")
+        {
+            health--;
+            Destroy(collision.gameObject);
+            if (health <= 0)
+            {
+                Destroy(gameObject.transform.parent.gameObject);
+            }
+        }
+    }
+    void flip()
+    {
+        if (isFacingRight)
+        {
+            isFacingRight = false;
+        }
+        else
+        {
+            isFacingRight = true;
+        }
+        Vector3 scaleFactor = transform.localScale;
+        scaleFactor.x *= -1;
+        transform.localScale = scaleFactor;
+    }
+}
+/*public class EnemyTurret : MonoBehaviour
 {
     public Transform player;
     public Transform projectileSpawnPoint;
     public Projectile projectilePrefab;
+    public SpriteRenderer EnemyProjectile;
     public float projectileForce;
-    GameObject projectile;
 
     public bool isFacingRight;
 
@@ -55,17 +177,17 @@ public class EnemyTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  if (player)
-      /*  {
+        if (player)
+        {
             if (player.transform.position.x < transform.position.x)
             {
                 sr.flipX = true;
             }
-            else
+           else
             {
                 sr.flipX = false;
             }
-        }*/
+        }
         if (transform.position.x < player.position.x && !isFacingRight)
         {
             flip();
@@ -123,4 +245,4 @@ private void OnCollisionEnter2D(Collision2D collision)
         scaleFactor.x *= -1;
         transform.localScale = scaleFactor;
     }
-}
+}*/

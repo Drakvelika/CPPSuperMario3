@@ -126,7 +126,7 @@ Animator:
   m_GameObject: {fileID: 8282158947615328302}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c20bceebc11b9684c9013d642abd71c6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -147,13 +147,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da8b2e8460025d409678bd4f07246bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7654857400348129939, guid: 3f7af3f4a17ecbc49ab1b763572973ad, type: 3}
-  projectileSpawnPoint: {fileID: 8282158947615328304}
+  projectileSpawnPoint: {fileID: 1547072121886323951}
   projectilePrefab: {fileID: 5120108072104111168, guid: f3e5b3f0b71a4264681ff6e408b32d04, type: 3}
-  projectileForce: 4
+  Player: {fileID: 7654857400348129939, guid: 3f7af3f4a17ecbc49ab1b763572973ad, type: 3}
+  EnemyProjectile: {fileID: 947284983061568336, guid: f3e5b3f0b71a4264681ff6e408b32d04, type: 3}
   isFacingRight: 0
+  projectileForce: 4
+  agroRange: 0
   projectileFireRate: 2
-  turretFireRange: 4
   health: 5
 --- !u!1 &8694210349891133129
 GameObject:
