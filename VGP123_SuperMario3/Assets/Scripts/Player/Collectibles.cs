@@ -38,14 +38,8 @@ public class Collectibles : MonoBehaviour
                     GameManager.instance.score++;
                     break;
                 case CollectibleType.LIVES:
-<<<<<<< Updated upstream
-                    pmScript = col.gameObject.GetComponent<PlayerMovement>();
-                    pmScript.lives++;
-                    Debug.Log(pmScript.lives);
-=======
                     GameManager.instance.lives++;
                     GameManager.instance.score++;
->>>>>>> Stashed changes
                     break;
                 case CollectibleType.POWERUP:
                     col.gameObject.GetComponent<PlayerMovement>().StartJChange();

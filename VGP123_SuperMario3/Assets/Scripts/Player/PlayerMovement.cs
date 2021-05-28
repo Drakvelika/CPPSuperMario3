@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius;
     public bool isShooting;
 
+    GameObject mainCamera;
+
     public int score = 0;
     public int lives = 3;
 
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         marioSprite = GetComponent<SpriteRenderer>();
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 
         if (speed <= 0)
         {
