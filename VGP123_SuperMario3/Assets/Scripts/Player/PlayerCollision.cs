@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D Col)
+    private void OnTriggerEnter2D(Collision2D Col)
     {
         if (Col.gameObject.tag == "Projectile")
         {
             GameManager.instance.lives--;
+            Debug.Log("Lives: " + GameManager.instance.lives);
             Destroy(Col.gameObject);
+
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -10,6 +10,7 @@ TagManager:
   - Objective
   - Turret
   - Projectile
+  - TurretSides
   layers:
   - Default
   - TransparentFX

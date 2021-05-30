@@ -68,14 +68,6 @@ public class EnemyTurret : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            anim.SetBool("isActive", true);
-        }
-    }
-
     public void fire()
     {
         if (Proj.flipX)

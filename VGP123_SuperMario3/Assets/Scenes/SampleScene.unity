@@ -1466,32 +1466,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1039009, y: 0.5556147}
   m_EdgeRadius: 0
---- !u!1 &628821988 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8282158947615328302, guid: 28a7fb3db17360d4ebd5de8116100b6d, type: 3}
-  m_PrefabInstance: {fileID: 8282158948215041505}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &628821989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628821988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7da8b2e8460025d409678bd4f07246bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSpawnPoint: {fileID: 8282158947615328304, guid: 28a7fb3db17360d4ebd5de8116100b6d, type: 3}
-  projectilePrefab: {fileID: 5120108072104111168, guid: f3e5b3f0b71a4264681ff6e408b32d04, type: 3}
-  Player: {fileID: 7654857400348129939, guid: 3f7af3f4a17ecbc49ab1b763572973ad, type: 3}
-  EnemyProjectile: {fileID: 947284983061568336, guid: f3e5b3f0b71a4264681ff6e408b32d04, type: 3}
-  isFacingRight: 0
-  projectileForce: 3
-  agroRange: 3
-  projectileFireRate: 2
-  health: 5
 --- !u!1 &667898866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,6 +1813,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1022426212, guid: f3e5b3f0b71a4264681ff6e408b32d04, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1517952111102999282, guid: f3e5b3f0b71a4264681ff6e408b32d04, type: 3}
       propertyPath: m_Name
       value: BulletBillRight
@@ -3485,10 +3463,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3557135730106709034, guid: 28a7fb3db17360d4ebd5de8116100b6d, type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 7654857400348129939, guid: 3f7af3f4a17ecbc49ab1b763572973ad, type: 3}
     - target: {fileID: 8282158947615328302, guid: 28a7fb3db17360d4ebd5de8116100b6d, type: 3}
       propertyPath: m_Name
       value: Turret1
@@ -3537,8 +3511,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3557135730106709034, guid: 28a7fb3db17360d4ebd5de8116100b6d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28a7fb3db17360d4ebd5de8116100b6d, type: 3}
 --- !u!1001 &8559793601991883302
 PrefabInstance:

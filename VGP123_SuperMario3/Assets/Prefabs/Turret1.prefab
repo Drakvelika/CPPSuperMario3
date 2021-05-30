@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 8282158947615328304}
   - component: {fileID: 8282158947615328305}
   - component: {fileID: 6450759840876138590}
-  - component: {fileID: 3557135730106709034}
+  - component: {fileID: 628821989}
   m_Layer: 0
   m_Name: Turret1
   m_TagString: Turret
@@ -135,7 +135,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3557135730106709034
+--- !u!114 &628821989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,13 +147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da8b2e8460025d409678bd4f07246bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpawnPoint: {fileID: 1547072121886323951}
+  projectileSpawnPoint: {fileID: 8282158947615328304}
   projectilePrefab: {fileID: 5120108072104111168, guid: f3e5b3f0b71a4264681ff6e408b32d04, type: 3}
   Player: {fileID: 7654857400348129939, guid: 3f7af3f4a17ecbc49ab1b763572973ad, type: 3}
   EnemyProjectile: {fileID: 947284983061568336, guid: f3e5b3f0b71a4264681ff6e408b32d04, type: 3}
   isFacingRight: 0
-  projectileForce: 4
-  agroRange: 0
+  projectileForce: 3
+  agroRange: 3
   projectileFireRate: 2
   health: 5
 --- !u!1 &8694210349891133129
@@ -165,9 +165,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547072121886323951}
+  - component: {fileID: 1325626675}
   m_Layer: 0
   m_Name: SpawnPointRight
-  m_TagString: Untagged
+  m_TagString: TurretSides
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,3 +187,29 @@ Transform:
   m_Father: {fileID: 8282158947615328304}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1325626675
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694210349891133129}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 51a800586d14cd74eab2d344d99086c7, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.2444253, y: 6.425457}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5111494, y: 20.5178}
+  m_EdgeRadius: 0
