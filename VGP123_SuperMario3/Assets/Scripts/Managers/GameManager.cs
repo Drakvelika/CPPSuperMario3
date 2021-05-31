@@ -88,6 +88,19 @@ public class GameManager : MonoBehaviour
         {
             QuitGame();
         }
+        if (_lives < 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+        if (SceneManager.GetActiveScene().name == "GameOver")
+        {
+            _lives = maxLives;
+            _score = 0;
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene("TitleScreen");
+            }
+        }
     }
 
     public void QuitGame()
@@ -98,11 +111,16 @@ public class GameManager : MonoBehaviour
        Application.Quit();
 #endif
     }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
     
     public void SpawnPlayer(Transform spawnLocation)
     {
         CameraFollow mainCamera = FindObjectOfType<CameraFollow>();
-
+        EnemyTurret[] enemyTurrets = FindObjectsOfType<EnemyTurret>();
         if (mainCamera)
         {
             mainCamera.player = Instantiate(playerPrefab, spawnLocation.position, spawnLocation.rotation);
@@ -111,6 +129,11 @@ public class GameManager : MonoBehaviour
         else
         {
             SpawnPlayer(spawnLocation);
+        }
+
+        for (int i = 0; i < enemyTurrets.Length; i++)
+        {
+            enemyTurrets[i].Player = playerinstance.transform;
         }
     }
 

@@ -5,7 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class EnemyTurret : MonoBehaviour
 {
-    public Transform projectileSpawnPoint;
+    public Transform projectileSpawnPointLeft;
+    public Transform projectileSpawnPointRight;
     public Projectile projectilePrefab;
     public Transform Player;
     public SpriteRenderer EnemyProjectile;
@@ -51,14 +52,15 @@ public class EnemyTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < Player.position.x && !isFacingRight)
+
+        if (transform.position.x < Player.position.x)
         {
-            flip();
+            isFacingRight = false;
             Proj.flipX = true;
         }
-        else if (transform.position.x > Player.position.x && isFacingRight)
+        else if (transform.position.x > Player.position.x)
         {
-            flip();
+            isFacingRight = true;
             Proj.flipX = false;
         }
         if (Time.time >= timeSinceLastShot + projectileFireRate)
@@ -70,17 +72,19 @@ public class EnemyTurret : MonoBehaviour
 
     public void fire()
     {
-        if (Proj.flipX)
+        if (isFacingRight)
         {
-                Projectile temp = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-                temp.speed = projectileForce;
-                EnemyProjectile.flipX = false;
+            Projectile temp = Instantiate(projectilePrefab, projectileSpawnPointRight.position, projectileSpawnPointRight.rotation);
+            temp.speed = -projectileForce;
+            EnemyProjectile = temp.GetComponent<SpriteRenderer>();
+            EnemyProjectile.flipX = true;
         }
         else
         {
-                Projectile temp = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-                temp.speed = -projectileForce;
-                EnemyProjectile.flipX = true;
+            Projectile temp = Instantiate(projectilePrefab, projectileSpawnPointLeft.position, projectileSpawnPointLeft.rotation);
+            temp.speed = projectileForce;
+            EnemyProjectile = temp.GetComponent<SpriteRenderer>();
+            EnemyProjectile.flipX = false;
         }
     }
 
@@ -100,20 +104,6 @@ public class EnemyTurret : MonoBehaviour
                 Destroy(gameObject.transform.parent.gameObject);
             }
         }
-    }
-    void flip()
-    {
-        if (isFacingRight)
-        {
-            isFacingRight = false;
-        }
-        else
-        {
-            isFacingRight = true;
-        }
-        Vector3 scaleFactor = transform.localScale;
-        scaleFactor.x *= -1;
-        transform.localScale = scaleFactor;
     }
 }
 /*public class EnemyTurret : MonoBehaviour

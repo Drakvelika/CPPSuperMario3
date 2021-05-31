@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collision2D Col)
+    private void OnCollisionEnter2D(Collision2D Col)
     {
         if (Col.gameObject.tag == "Projectile")
         {
