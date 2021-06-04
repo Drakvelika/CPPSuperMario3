@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public CanvasManager CM;
     public GameObject playerinstance;
     public GameObject playerPrefab;
     public LevelManager currentLevel;
@@ -77,10 +78,12 @@ public class GameManager : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "SampleScene")
             {
                 SceneManager.LoadScene("TitleScreen");
+                //CM.mainMenu.SetActive(false);
             }    
             else if (SceneManager.GetActiveScene().name == "TitleScreen")
             {
                 SceneManager.LoadScene("SampleScene");
+               // CM.mainMenu.SetActive(true);
             }
         }
         //SceneManager.LoadScene();
@@ -98,6 +101,7 @@ public class GameManager : MonoBehaviour
             _score = 0;
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                CM.mainMenu.SetActive(true);
                 SceneManager.LoadScene("TitleScreen");
             }
         }
@@ -114,9 +118,22 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        //CM.mainMenu.SetActive(false);
         SceneManager.LoadScene("SampleScene");
     }
     
+    public void ReturnToMenu()
+    {
+        //CM.mainMenu.SetActive(true);
+        SceneManager.LoadScene("TitleScreen");
+    }
+
+    public void ReturnToGame()
+    {
+        //CM.pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     public void SpawnPlayer(Transform spawnLocation)
     {
         CameraFollow mainCamera = FindObjectOfType<CameraFollow>();

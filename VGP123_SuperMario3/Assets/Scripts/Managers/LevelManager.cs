@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public int startinglives;
+    public int Startinglives;
     public Transform spawnLocation;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.lives = startinglives;
+        GameManager.instance.lives = Startinglives;
         GameManager.instance.SpawnPlayer(spawnLocation);
         GameManager.instance.currentLevel = GetComponent<LevelManager>();
     }
