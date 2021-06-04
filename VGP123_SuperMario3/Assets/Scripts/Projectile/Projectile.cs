@@ -33,14 +33,8 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "coin" || col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "coin" || col.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
-        }
-        
-        if (col.gameObject.tag == "Enemy")
-        {
-            //col.gameObject.GetComponent<EnemyTurret>();
             Destroy(gameObject);
         }
     }

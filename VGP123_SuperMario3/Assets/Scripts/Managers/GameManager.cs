@@ -44,6 +44,17 @@ public class GameManager : MonoBehaviour
             }
             else if (_lives < 0)
             {
+                SceneManager.LoadScene("GameOver");
+                if (SceneManager.GetActiveScene().name == "GameOver")
+                {
+                    _lives = maxLives;
+                    _score = 0;
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        CM.mainMenu.SetActive(true);
+                        SceneManager.LoadScene("TitleScreen");
+                    }
+                }
                 //Game Over code goes here.
             }
             Debug.Log("Current Lives Are: " + _lives);
@@ -54,6 +65,8 @@ public class GameManager : MonoBehaviour
     public GameObject playerinstance;
     public GameObject playerPrefab;
     public LevelManager currentLevel;
+
+    CanvasManager currentCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +80,6 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this);
         }
-        //SceneManager;
     }
 
     // Update is called once per frame
@@ -85,25 +97,19 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("SampleScene");
                // CM.mainMenu.SetActive(true);
             }
+            else if (SceneManager.GetActiveScene().name == "GameOver")
+            {
+                SceneManager.LoadScene("TitleScreen");
+            }
         }
-        //SceneManager.LoadScene();
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
             QuitGame();
         }
-        if (_lives < 0)
+        currentCanvas = GameObject.FindObjectOfType<CanvasManager>();
+        if (currentCanvas)
         {
-            SceneManager.LoadScene("GameOver");
-        }
-        if (SceneManager.GetActiveScene().name == "GameOver")
-        {
-            _lives = maxLives;
-            _score = 0;
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                CM.mainMenu.SetActive(true);
-                SceneManager.LoadScene("TitleScreen");
-            }
+            currentCanvas.SetLivesText();
         }
     }
 
@@ -118,22 +124,18 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        //CM.mainMenu.SetActive(false);
         SceneManager.LoadScene("SampleScene");
     }
-    
     public void ReturnToMenu()
     {
-        //CM.mainMenu.SetActive(true);
         SceneManager.LoadScene("TitleScreen");
+        currentCanvas.mainMenu.SetActive(true);
+        currentCanvas.gameOverMenu.SetActive(false);
     }
-
     public void ReturnToGame()
     {
-        //CM.pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }
-
     public void SpawnPlayer(Transform spawnLocation)
     {
         CameraFollow mainCamera = FindObjectOfType<CameraFollow>();

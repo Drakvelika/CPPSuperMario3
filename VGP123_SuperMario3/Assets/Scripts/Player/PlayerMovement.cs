@@ -56,44 +56,47 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Checks to make sure the character is on the ground before swapping back to idle animation.
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, isGroundLayer);
-
-        //Code to jump.
-        if (Input.GetKeyDown(KeyCode.Q) && Input.GetKeyDown(KeyCode.E))
+        if (Time.timeScale != 0)
         {
-            if (isGrounded)
+            //Checks to make sure the character is on the ground before swapping back to idle animation.
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, isGroundLayer);
+
+            //Code to jump.
+            if (Input.GetKeyDown(KeyCode.Q) && Input.GetKeyDown(KeyCode.E))
             {
-                anim.SetTrigger("DoubleJump");
-                rb.velocity = Vector2.zero;
-                rb.AddForce(Vector2.up * (jumpForce + 150));
+                if (isGrounded)
+                {
+                    anim.SetTrigger("DoubleJump");
+                    rb.velocity = Vector2.zero;
+                    rb.AddForce(Vector2.up * (jumpForce + 150));
+                }
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (isGrounded)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                rb.velocity = Vector2.zero;
-                rb.AddForce(Vector2.up * jumpForce);
+                if (isGrounded)
+                {
+                    rb.velocity = Vector2.zero;
+                    rb.AddForce(Vector2.up * jumpForce);
+                }
             }
-        }
 
-        Vector2 moveDirection = new Vector2(horizontalInput * speed, rb.velocity.y);
-        rb.velocity = moveDirection;
+            Vector2 moveDirection = new Vector2(horizontalInput * speed, rb.velocity.y);
+            rb.velocity = moveDirection;
 
-        anim.SetFloat("speed", Mathf.Abs(horizontalInput));
-        anim.SetBool("isGrounded", isGrounded);
+            anim.SetFloat("speed", Mathf.Abs(horizontalInput));
+            anim.SetBool("isGrounded", isGrounded);
 
-        if (marioSprite.flipX && horizontalInput > 0 || !marioSprite.flipX && horizontalInput < 0)
-        {
-            marioSprite.flipX = !marioSprite.flipX;
-        }
+            if (marioSprite.flipX && horizontalInput > 0 || !marioSprite.flipX && horizontalInput < 0)
+            {
+                marioSprite.flipX = !marioSprite.flipX;
+            }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            anim.SetBool("isShooting", true);
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                anim.SetBool("isShooting", true);
+            }
         }
     }
 

@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPointLeft: {fileID: 7654857401569038588}
   spawnPointRight: {fileID: 7654857401998427460}
-  projectileSpeed: 0
+  projectileSpeed: 1
   projectilePrefab: {fileID: 2115687008538469966, guid: 5938ceea7d0613244ad477a596fe8c80, type: 3}
 --- !u!114 &1053340664
 MonoBehaviour:

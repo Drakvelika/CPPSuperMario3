@@ -17,6 +17,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject mainMenu;
     public GameObject settingsMenu;
     public GameObject pauseMenu;
+    public GameObject gameOverMenu;
 
     [Header("Text")]
     public Text livesText;
@@ -24,6 +25,8 @@ public class CanvasManager : MonoBehaviour
 
     [Header("Slider")]
     public Slider volSlider;
+
+   // public Image[] Hearts;
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +83,13 @@ public class CanvasManager : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
+        if (settingsMenu)
+        {
+            if (settingsMenu.activeSelf)
+            {
+                volText.text = volSlider.value.ToString();
+            }
+        }
     }
 
     void ReturnToGame()
@@ -101,7 +111,7 @@ public class CanvasManager : MonoBehaviour
         mainMenu.SetActive(false);
     }
 
-    void SetLivesText()
+    public void SetLivesText()
     {
         if (GameManager.instance)
         {
