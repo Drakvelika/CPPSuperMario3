@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
@@ -20,11 +21,18 @@ public class CanvasManager : MonoBehaviour
     public GameObject gameOverMenu;
 
     [Header("Text")]
-    public Text livesText;
+    public Text scoreText;
     public Text volText;
+
+    [Header("Sprites")]
+    public Image heart1;
+    public Image heart2;
+    public Image heart3;
 
     [Header("Slider")]
     public Slider volSlider;
+
+    public Toggle muteButton;
 
    // public Image[] Hearts;
 
@@ -55,15 +63,15 @@ public class CanvasManager : MonoBehaviour
         {
             settingsButton.onClick.AddListener(() => ShowSettingsMenu());
         }
-        if (livesText)
+        if (scoreText)
         {
             if (GameManager.instance)
             {
-                livesText.text = GameManager.instance.lives.ToString();
+                scoreText.text = GameManager.instance.score.ToString();
             }
             else
             {
-                SetLivesText();
+                SetScoreText();
             }
         }
     }
@@ -87,7 +95,7 @@ public class CanvasManager : MonoBehaviour
         {
             if (settingsMenu.activeSelf)
             {
-                volText.text = volSlider.value.ToString();
+                volText.text = Mathf.Round(volSlider.value).ToString();
             }
         }
     }
@@ -101,25 +109,58 @@ public class CanvasManager : MonoBehaviour
 
     void ShowMainMenu()
     {
-        settingsMenu.SetActive(false);
-        mainMenu.SetActive(true);
+        if (SceneManager.GetActiveScene().name == "TitleScreen")
+        {
+            settingsMenu.SetActive(false);
+            mainMenu.SetActive(true);
+        }
+        else if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
+            settingsMenu.SetActive(false);
+            pauseMenu.SetActive(true);
+            Time.timeScale = 1;
+        }
     }
 
     void ShowSettingsMenu()
     {
         settingsMenu.SetActive(true);
         mainMenu.SetActive(false);
+        if (pauseMenu)
+        pauseMenu.SetActive(false);
     }
 
     public void SetLivesText()
     {
         if (GameManager.instance)
         {
-            livesText.text = GameManager.instance.lives.ToString();
+            switch (GameManager.instance.lives)
+            {
+                case 3:
+                    heart1.enabled = true;
+                    heart2.enabled = true;
+                    heart3.enabled = true; 
+                    break;
+                case 2:
+                    heart3.enabled = false;
+                    heart2.enabled = true;
+                    heart1.enabled = true;
+                    break;
+                case 1:
+                    heart2.enabled = false;
+                    heart1.enabled = true;
+                    break;
+                case 0:
+                    heart1.enabled = false;
+                    break;
+            }
         }
-        else
+    }
+    public void SetScoreText()
+    {
+        if (GameManager.instance)
         {
-            SetLivesText();
+            scoreText.text = GameManager.instance.score.ToString();
         }
     }
 }

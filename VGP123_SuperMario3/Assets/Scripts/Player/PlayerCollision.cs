@@ -6,12 +6,12 @@ public class PlayerCollision : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D Col)
     {
-        if (Col.gameObject.tag == "Projectile")
+        if (Col.gameObject.tag == "Projectile" || Col.gameObject.tag == "EnemyWalker")
         {
             GameManager.instance.lives--;
             Debug.Log("Lives: " + GameManager.instance.lives);
             Destroy(Col.gameObject);
-
+            GameManager.instance.CM.SetLivesText();
         }
     }
 

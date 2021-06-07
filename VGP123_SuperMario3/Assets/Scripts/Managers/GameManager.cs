@@ -106,10 +106,15 @@ public class GameManager : MonoBehaviour
         {
             QuitGame();
         }
-        currentCanvas = GameObject.FindObjectOfType<CanvasManager>();
+        currentCanvas = FindObjectOfType<CanvasManager>();
         if (currentCanvas)
         {
-            currentCanvas.SetLivesText();
+            if (SceneManager.GetActiveScene().name == "SampleScene")
+            currentCanvas.SetScoreText();
+        }
+        if (!CM)
+        {
+            CM = FindObjectOfType<CanvasManager>();
         }
     }
 
@@ -125,12 +130,13 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("SampleScene");
+        CM = FindObjectOfType<CanvasManager>();
     }
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("TitleScreen");
         currentCanvas.mainMenu.SetActive(true);
-        currentCanvas.gameOverMenu.SetActive(false);
+        Time.timeScale = 1;
     }
     public void ReturnToGame()
     {
