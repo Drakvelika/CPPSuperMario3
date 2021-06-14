@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPointLeft: {fileID: 7654857401569038588}
   spawnPointRight: {fileID: 7654857401998427460}
-  projectileSpeed: 1
+  projectileSpeed: 7
   projectilePrefab: {fileID: 2115687008538469966, guid: 5938ceea7d0613244ad477a596fe8c80, type: 3}
 --- !u!114 &1053340664
 MonoBehaviour:
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c7652bac13dce429242610e7709e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSFX: {fileID: 8300000, guid: 547912b9d6475ca4c9df197a69a8e5e9, type: 3}
 --- !u!1 &7654857400430472464
 GameObject:
   m_ObjectHideFlags: 0

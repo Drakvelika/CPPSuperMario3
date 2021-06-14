@@ -100,8 +100,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 03f152d983016f94b8fd99ec9310c9bf, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   lifetime: 3
+  deathSFX: {fileID: 0}
 --- !u!61 &1671730212626766114
 BoxCollider2D:
   m_ObjectHideFlags: 0

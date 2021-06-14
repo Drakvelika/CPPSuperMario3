@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   lifetime: 4
+  deathSFX: {fileID: 8300000, guid: 547912b9d6475ca4c9df197a69a8e5e9, type: 3}
 --- !u!95 &-3403135772702574257
 Animator:
   serializedVersion: 3

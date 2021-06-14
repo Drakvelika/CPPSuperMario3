@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1676810669
 Transform:
   m_ObjectHideFlags: 0
@@ -99,6 +99,8 @@ GameObject:
   - component: {fileID: 8282158947615328305}
   - component: {fileID: 6450759840876138590}
   - component: {fileID: 628821989}
+  - component: {fileID: 6227369430797112628}
+  - component: {fileID: 821224191477289604}
   m_Layer: 6
   m_Name: Turret1
   m_TagString: Turret
@@ -211,10 +213,63 @@ MonoBehaviour:
   Player: {fileID: 7654857400348129939, guid: 3f7af3f4a17ecbc49ab1b763572973ad, type: 3}
   EnemyProjectile: {fileID: 947284983061568336, guid: f3e5b3f0b71a4264681ff6e408b32d04, type: 3}
   isFacingRight: 0
+  deathSFX: {fileID: 8300000, guid: 547912b9d6475ca4c9df197a69a8e5e9, type: 3}
   projectileForce: 3
   agroRange: 3
   projectileFireRate: 2
   health: 5
+--- !u!61 &6227369430797112628
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282158947615328302}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.53333336, y: 1.1}
+    newSize: {x: 0.53333336, y: 1.1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.53333336, y: 1.1}
+  m_EdgeRadius: 0
+--- !u!61 &821224191477289604
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282158947615328302}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.53333336, y: 1.1}
+    newSize: {x: 0.53333336, y: 1.1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.53333336, y: 1.1}
+  m_EdgeRadius: 0
 --- !u!1 &8694210349891133129
 GameObject:
   m_ObjectHideFlags: 0

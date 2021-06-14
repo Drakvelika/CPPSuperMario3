@@ -9,6 +9,9 @@ public class Projectile : MonoBehaviour
     public float lifetime;
     private Rigidbody2D Rigid;
 
+    AudioSource deathAudioSource;
+    public AudioClip deathSFX;
+
     void Awake()
     {
         Rigid = GetComponent<Rigidbody2D>();
@@ -36,6 +39,27 @@ public class Projectile : MonoBehaviour
         if (col.gameObject.tag == "coin" || col.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
+        }
+        if (col.gameObject.tag == "Fireball")
+        {
+            DeathSound();
+            Destroy(col.gameObject);
+            Destroy(gameObject);
+        }
+    }
+    void DeathSound()
+    {
+        if (!deathAudioSource)
+        {
+            deathAudioSource = gameObject.AddComponent<AudioSource>();
+           // deathAudioSource.volume = 0.2f;
+            deathAudioSource.clip = deathSFX;
+            deathAudioSource.loop = false;
+            deathAudioSource.Play();
+        }
+        else
+        {
+            deathAudioSource.Play();
         }
     }
 }

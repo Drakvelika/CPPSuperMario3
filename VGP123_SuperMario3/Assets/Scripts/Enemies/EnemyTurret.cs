@@ -15,6 +15,9 @@ public class EnemyTurret : MonoBehaviour
     Animator anim;
     SpriteRenderer Proj;
 
+    AudioSource deathAudioSource;
+    public AudioClip deathSFX;
+
     public float projectileForce = 3.0f;
     public float agroRange;
     public float projectileFireRate;
@@ -98,11 +101,28 @@ public class EnemyTurret : MonoBehaviour
         if (collision.gameObject.tag == "Fireball")
         {
             health--;
+            DeathSound();
             Destroy(collision.gameObject);
             if (health <= 0)
             {
-                Destroy(gameObject.transform.parent.gameObject);
+                Destroy(gameObject);
             }
+        }
+    }
+
+    void DeathSound()
+    {
+        if (!deathAudioSource)
+        {
+            deathAudioSource = gameObject.AddComponent<AudioSource>();
+            deathAudioSource.volume = 0.20f;
+            deathAudioSource.clip = deathSFX;
+            deathAudioSource.loop = false;
+            deathAudioSource.Play();
+        }
+        else
+        {
+            deathAudioSource.Play();
         }
     }
 }
