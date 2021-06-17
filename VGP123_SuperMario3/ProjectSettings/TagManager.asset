@@ -12,6 +12,10 @@ TagManager:
   - Projectile
   - TurretSides
   - ShowOnPause
+  - EnemyWalker
+  - DeathCol
+  - EnemyBarrier
+  - EnemyHead
   layers:
   - Default
   - TransparentFX

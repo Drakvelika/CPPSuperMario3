@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    SpriteRenderer sr;
     static GameManager _instance = null;
 
     public static GameManager instance
@@ -164,6 +165,8 @@ public class GameManager : MonoBehaviour
 
     public void Respawn()
     {
+        sr = playerinstance.GetComponent<SpriteRenderer>();
+        sr.enabled = true;
         playerinstance.transform.position = currentLevel.spawnLocation.position;
     }
 }
